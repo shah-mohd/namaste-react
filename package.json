@@ -1,0 +1,27 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "it's a react project for learning purpose",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shah-mohd/react-practice.git"
+  },
+  "author": "Shah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shah-mohd/react-practice/issues"
+  },
+  "homepage": "https://github.com/shah-mohd/react-practice#readme",
+  "devDependencies": {
+    "parcel": "^2.13.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}
