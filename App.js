@@ -1,36 +1,35 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-/**
- * <div id="parent">
- *   <div id="child1">
- *      <h1>I am h1 tag</h1>
- *      <h2>I am h2 tag</h2>
- *    </div>
- *    <div id="child2">
- *      <h1>I am h1 tag</h1>
- *      <h2>I am h2 tag</h2>
- *    </div>
- * </div>
- * 
- * 
- * 
- */
+const heading1 = <h1 className="head">Namaste React</h1>
 
-const heading = React.createElement(
-    "div", 
-    {id:"parent"}, 
-    React.createElement(
-        "div",
-        {id:"child1"},
-        [React.createElement("h1",{},"I am h1 tag"), React.createElement("h2",{},"I am h2 tag")]
-    ),
-    React.createElement(
-        "div",
-        {id:"child2"},
-        [React.createElement("h1",{},"I am h1 tag"), React.createElement("h2",{},"I am h2 tag")]
-    ));
+/***
+ *  Functional Component - a JS function return JSX
+ *      - Component always start with Capital letter - (Headding)
+ * 
+ * */
+    
+const Heading1 = ()=> <h1 className="heading1">This is heading One</h1>;
+
+const Heading2 = ()=> (
+    <h1 className="heading2">
+        This ia heading two
+    </h1>
+);
+
+const Heading3 = ()=> {
+    return <h1 className="heading3">This is heading three</h1>;
+}
+
+const HeaddingComponent = ()=> (
+    <div id="container">
+        <Heading1/>
+        <Heading2/>
+        <Heading3/>
+        <p>this is paragraph</p>
+    </div>
+)
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(heading);
+root.render(<HeaddingComponent/>);

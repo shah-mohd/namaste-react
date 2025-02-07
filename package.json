@@ -4,6 +4,8 @@
   "description": "it's a react project for learning purpose",
   "main": "App.js",
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
@@ -23,5 +25,8 @@
   "dependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
-  }
+  },
+  "browsersList": [
+    "last 2 versions"
+  ]
 }
