@@ -56,7 +56,14 @@
     margin: 10px;
 }
 
-.all-res-btn{
-    margin: 10px;
+.shimmer-container {
+    display: flex;
+    flex-wrap: wrap;
 }
 
+.shimmer-card {
+    width: 200px;
+    height: 300px;
+    margin: 5px;
+    background-color: #f0f0f0;
+}
