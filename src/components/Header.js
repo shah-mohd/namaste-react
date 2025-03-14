@@ -1,11 +1,15 @@
 import { CDN_LOGO } from "../utils/constents";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
+
 
 const Header = ()=> {
     const [loginBtn, setLoginBtn] = useState("Login");
     const onlineStatus = useOnlineStatus();
+
+    const {loggedInUser} = useContext(UserContext);
 
     return (
         <div className="flex justify-between m-4 h-38 bg-pink-100 border">
@@ -38,6 +42,9 @@ const Header = ()=> {
                         loginBtn === "Login" ? setLoginBtn("Logout") : setLoginBtn("Login");
                     }}
                     >{loginBtn}</button>
+                    <li className="pr-4 font-medium text-lg">
+                        {loggedInUser}
+                    </li>
                 </ul>
             </div>
         </div>

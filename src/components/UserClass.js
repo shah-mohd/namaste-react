@@ -1,4 +1,5 @@
 import React from "react";
+import UserContext from "../utils/UserContext";
 
 class UserClass extends React.Component {
     constructor(props){
@@ -24,16 +25,26 @@ class UserClass extends React.Component {
         // console.log("Child render");
         const {avatar_url, name, location, email} = this.state.userData;
         return(
-            <div className="user-card">
-                <div className="user-img">
-                    <img src={avatar_url} />
+            <>
+            <div>
+                <UserContext.Consumer>
+                    {({loggedInUser})=> <h1 className="font-medium">{loggedInUser}</h1>}
+                </UserContext.Consumer>
+            </div>
+
+            <div className="flex w-6/12 mx-auto">
+                <div className="w-3/12">
+                    <img 
+                    className="rounded-lg"
+                    src={avatar_url} />
                 </div>
-                <div className="user-info">
-                    <h2>Name: {name}</h2>
+                <div className="w-9/12 ml-10 font-bold text-gray-600">
+                    <h2 className="">Name: {name}</h2>
                     <h3>Location: {location}</h3>
                     <h4>Email: shahmohammadt01@gmail.com</h4>
                 </div>
-        </div>
+            </div>
+        </>
         )
     }
 }
