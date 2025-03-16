@@ -7,7 +7,7 @@ const RestaurantCategory = ({data, showItems, setShowIndex})=> {
     }
 
     return (
-        <div>
+        <div className="">
         {/* title section */}
         <div
         onClick={handelClick}
@@ -17,7 +17,8 @@ const RestaurantCategory = ({data, showItems, setShowIndex})=> {
                 <span> ({data.itemCards.length})</span>
             </div>
             <div>
-                <span>⬇️</span>
+                {/* <span>⬇️</span> */}
+                {showItems ? <span>⬆️</span> : <span>⬇️</span>}
             </div>
         </div>
 

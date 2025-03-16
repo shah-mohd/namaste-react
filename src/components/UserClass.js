@@ -32,7 +32,7 @@ class UserClass extends React.Component {
                 </UserContext.Consumer>
             </div>
 
-            <div className="flex w-6/12 mx-auto">
+            <div className="flex w-6/12 mx-auto mt-10">
                 <div className="w-3/12">
                     <img 
                     className="rounded-lg"

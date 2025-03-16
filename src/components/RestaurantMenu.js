@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import Shimmer from "./Shimmer";
+import {ShimmerMenu} from "./Shimmer";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
 import { useState } from "react";
@@ -12,17 +12,17 @@ const RestaurantMenu = ()=> {
 
     const [showIndex, setShowIndex] = useState(null);
 
-    if(resInfo === null) return <Shimmer />
+    if(resInfo === null) return <ShimmerMenu />
 
     const {name, cuisines, costForTwoMessage, avgRating, totalRatingsString, cloudinaryImageId , sla:{deliveryTime}} = resInfo?.data?.cards[2]?.card?.card?.info;
 
     const categories = resInfo.data.cards[4].groupedCard?.cardGroupMap?.REGULAR?.cards.filter((category)=> category?.card?.card?.["@type"] == "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
 
     return(
-        <div className="res-info-container">
+        <div className="">
 
             {/* restaurant info */}
-            <div className="w-6/12 m-auto  p-4 rounded-lg bg-linear-to-t from-gray-200 to-white  shadow-lg">
+            <div className="w-6/12 m-auto  p-4 rounded-b-lg bg-linear-to-t from-gray-200 to-white  shadow-lg shadow-black">
                 <div className="font-bold text-3xl my-8">
                     <h1>{name}</h1>
                 </div>
@@ -33,7 +33,7 @@ const RestaurantMenu = ()=> {
                 </div>
             </div>
 
-            <div>
+            <div className="">
                 {categories.map((category, index) => (
                     <RestaurantCategory 
                     key={category.card.card.title} 

@@ -16,7 +16,7 @@ const ItemsList = ({items})=> {
             {items.map((item)=> (
                 <div 
                 key={item.card.info.id}
-                className="w-6/12 mx-auto my-4 p-4 flex justify-between border-b bg-gray-100 rounded-lg">
+                className="w-6/12 mx-auto p-4 flex justify-between border-b bg-gray-100">
                     <div className="w-9/12">
                         <p className="font-bold text-xl">{item.card.info.name}</p>
                         <p className="font-bold text-base">{item.card.info.price/100 || item.card.info.defaultPrice/100}</p>

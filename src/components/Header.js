@@ -5,7 +5,6 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
 
-
 const Header = ()=> {
     const [loginBtn, setLoginBtn] = useState("Login");
     const onlineStatus = useOnlineStatus();
@@ -14,17 +13,18 @@ const Header = ()=> {
 
     // subscribing to the store using a Selector
     const cartItems = useSelector((store) => store.cart.items);
-    // console.log(cartItems);
 
     return (
-        <div className="flex justify-between m-4 h-38 bg-pink-100 border">
-            <div className="logo">
+        <div className="flex justify-between bg-[#ff5200]">
+            <div className="m-4 h-24">
                 <img 
-                className="h-full"
-                src={CDN_LOGO} alt="logo" />
+                className="h-full rounded-2xl"
+                src={CDN_LOGO}
+                alt="logo" 
+                />
             </div>
             <div className="nav-items">
-                <ul className="flex items-center h-38 font-bold text-xl">
+                <ul className="flex items-center h-38 w-full font-bold text-[#ffffff] text-base">
                     <li className="px-4">
                         Online Status:{onlineStatus?"🟢":"🔴"}
                     </li>
@@ -44,7 +44,7 @@ const Header = ()=> {
                         <Link to="/cart">Cart- ({cartItems.length})</Link>
                     </li>
                     <button 
-                    className="px-6 py-1 bg-black text-white border mr-4 rounded-sm cursor-pointer"
+                    className="px-6 py-1 bg-black text-white mr-4 rounded-sm cursor-pointer"
                     onClick={() => {
                         loginBtn === "Login" ? setLoginBtn("Logout") : setLoginBtn("Login");
                     }}
